@@ -1,0 +1,79 @@
+/* Reset */
+* { margin:0; padding:0; box-sizing:border-box; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
+/* Animated gradient background */
+body {
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: #111;
+  line-height: 1.6;
+}
+
+@keyframes gradientBG {0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
+
+/* Intro Overlay */
+#intro {
+  position: fixed; top:0; left:0; width:100%; height:100%; background-color:#111; color:#fff;
+  display:flex; flex-direction:column; justify-content:center; align-items:center; z-index:5000;
+  opacity:1; overflow:hidden; transition:opacity 1s ease, transform 1s ease;
+}
+
+#heartCanvas { position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:1; }
+
+#intro h1, #intro p { position: relative; z-index:2; opacity:0; }
+#intro h1 { font-size:3rem; letter-spacing:3px; margin-bottom:20px; animation: fadeInUp 1s forwards 0.5s;}
+#intro p { font-size:1.3rem; animation: fadeInUp 1s forwards 1.5s; }
+
+@keyframes fadeInUp {0%{opacity:0; transform:translateY(20px);}100%{opacity:1; transform:translateY(0);} }
+#intro.fade-out { opacity:0; transform:translateY(-20px); pointer-events:none; }
+
+/* Navbar */
+.navbar { display:flex; justify-content:space-between; align-items:center; padding:15px 30px; position:sticky; top:0; background-color: rgba(255,255,255,0.1); backdrop-filter: blur(10px); z-index:1000; flex-wrap:wrap; }
+.navbar .logo { font-weight:bold; font-size:1.5rem; color:#fff; }
+
+/* Hamburger */
+.hamburger { display:none; flex-direction:column; cursor:pointer; gap:5px; }
+.hamburger div { width:25px; height:3px; background-color:#fff; border-radius:3px; transition:0.3s; }
+
+/* Nav links */
+.navbar .nav-links { list-style:none; display:flex; gap:15px; flex-wrap:wrap; }
+.navbar .nav-links li button { background:transparent; border:2px solid #fff; color:#fff; padding:6px 12px; border-radius:8px; cursor:pointer; font-weight:500; transition:0.3s;}
+.navbar .nav-links li button:hover { background:#fff; color:#0077cc; transform:scale(1.05); }
+
+/* Hero */
+.hero { text-align:center; padding:80px 20px 40px; color:#fff; }
+.hero h1 { font-size:2.5rem; margin-bottom:10px; }
+.hero p { font-size:1.1rem; color:#f0f0f0; }
+
+/* Modals */
+.modal { display:none; position:fixed; z-index:2000; left:0; top:0; width:100%; height:100%; overflow:auto; backdrop-filter:blur(5px); background-color:rgba(0,0,0,0.5);}
+.modal-content { background:#fff; margin:80px auto; padding:25px; border-radius:15px; max-width:700px; animation:popup 0.4s ease; position:relative;}
+@keyframes popup { from{transform:scale(0.8);opacity:0;} to{transform:scale(1);opacity:1;} }
+.close { position:absolute; top:15px; right:20px; font-size:1.5rem; cursor:pointer; font-weight:bold; }
+.close:hover { color:#0077cc; }
+
+/* Projects */
+.projects { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px;}
+.project { background:#f9f9f9; padding:20px; border-radius:12px; box-shadow:0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s;}
+.project:hover { transform:translateY(-5px); }
+
+/* Game */
+#game-area { width:100%; height:250px; border:2px dashed #0077cc; border-radius:10px; margin:20px 0; position:relative; overflow:hidden; background-color:#f0f8ff; }
+#catch-btn { position:absolute; padding:8px 15px; cursor:pointer; background-color:#0077cc; color:#fff; border:none; border-radius:8px; font-weight:bold; transition:transform 0.1s;}
+#catch-btn:hover { transform:scale(1.1); }
+
+/* Contact */
+a.contact-link { color:#0077cc; text-decoration:none; font-weight:bold; }
+a.contact-link:hover { text-decoration:underline; }
+
+/* Footer */
+footer { text-align:center; padding:40px 20px; color:#fff; font-size:0.9rem; background-color: rgba(0,0,0,0.2); }
+
+/* Mobile */
+@media (max-width:768px){
+  .hero h1{font-size:2rem;} .hero p{font-size:1rem;} .navbar{padding:15px 20px;} .nav-links{gap:10px; flex-wrap:wrap;}
+  .hamburger{display:flex;} .nav-links{flex-direction:column; width:100%; display:none; text-align:center; background-color: rgba(255,255,255,0.1); backdrop-filter: blur(10px); position:absolute; top:60px; left:0; padding:15px 0;}
+  .nav-links.show{display:flex;} #game-area{height:200px;}
+}

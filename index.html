@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Darren Bardelas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Intro Overlay -->
+  <div id="intro">
+    <canvas id="heartCanvas"></canvas>
+    <h1>Darren Bardelas</h1>
+    <p>Web Developer | Designer | APP Developer</p>
+  </div>
+
+  <header>
+    <nav class="navbar">
+      <div class="logo">Darren Bardelas</div>
+      <div class="hamburger" id="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><button class="modal-btn" data-target="about-modal">About Me</button></li>
+        <li><button class="modal-btn" data-target="projects-modal">Projects</button></li>
+        <li><button class="modal-btn" data-target="contact-modal">Contact</button></li>
+        <li><button class="modal-btn" data-target="game-modal">Game</button></li>
+      </ul>
+    </nav>
+    <div class="hero">
+      <h1>Darren Bardelas</h1>
+      <p>Web Developer | Designer | APP Developer</p>
+    </div>
+  </header>
+
+  <!-- Modals -->
+  <div id="about-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>About Me</h2>
+      <p>Hello, I'am Darren, Grade 12 student with the course of Science Technology Engineering and Mathematics in Salvacion National High School. I am passionate about programming, I love creating websites and apps, and I enjoy expressing my ideas where they can be seen and interacted with.</p>
+    </div>
+  </div>
+
+  <div id="projects-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Projects</h2>
+      <div class="projects">
+        <div class="project">
+          <h3>Project One</h3>
+          <p>QRCode-Based Attendance System with a basic website dashboard using Arduino technology.</p>
+        </div>
+        <div class="project">
+          <h3>Project Two</h3>
+          <p>An APP that generates QR codes aligned to my QR code-based attendance machine.</p>
+        </div>
+        <div class="project">
+          <h3>Project Three</h3>
+          <p>Coming Soon!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="contact-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Contact</h2>
+      <p>If you'd like to get in touch, feel free to email me at <a href="mailto:darrenlibarrabardelas@gmail.com" class="contact-link">darrenlibarrabardelas@gmail.com</a></p>
+    </div>
+  </div>
+
+  <div id="game-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Catch the Button Game!</h2>
+      <p>Click the moving button as many times as you can!</p>
+      <div id="game-area">
+        <button id="catch-btn">Catch Me!</button>
+      </div>
+      <p>Score: <span id="score">0</span></p>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Darren Bardelas. All Rights Reserved.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
